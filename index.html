@@ -45,7 +45,7 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         .avatar img:hover {
@@ -146,51 +146,64 @@
             color: #333;
         }
 
-        /* Projects Section */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            align-items: stretch; /* Ensures all cards stretch equally */
         }
 
+        /* Project Card */
         .project {
             background: #fff;
             border-radius: 12px;
             padding: 1.5rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
-            /* Keep each project card aligned */
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 320px; /* Adjust if needed for uniform heights */
+            justify-content: space-between; /* Ensures buttons align properly */
+            min-height: 420px; /* Force equal height */
         }
 
-        .project:hover {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transform: translateY(-4px);
-        }
-
+        /* Project Image */
         .project img {
-            /* Maintain consistent ratio for project images */
-            width: 100%;
-            max-height: 180px; 
-            object-fit: cover;
+            width: 100%; /* Make all images take full width */
+            height: 150px; /* Consistent height for all images */
+            object-fit: contain; /* Ensure full visibility without cropping */
             border-radius: 8px;
             margin-bottom: 1rem;
         }
 
+        /* Project Title */
         .project h3 {
             font-size: 1.25rem;
             color: #001f3f;
             margin: 0.5rem 0;
+            text-align: center;
         }
 
+        /* Project Description */
         .project p {
             font-size: 0.95rem;
             color: #333;
             text-align: center;
+            flex-grow: 1; /* Forces text area to stretch evenly */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 90%;
         }
+
+        /* Project Button */
+        .project .button {
+            width: 40%; /* Ensures buttons are equal */
+            text-align: center;
+        }
+
 
         /* Footer */
         footer {
@@ -248,7 +261,7 @@
         </div>
         <h2>About Me:</h2>
         <p>Hey, I'm Oskar! I'm a Junior at Georgia Tech, majoring in Computer Science.</p>
-        <p>In my free time, I read, play soccer, lift, and go to car shows.</p>
+        <p>Outside of coding, I enjoy soccer, lifting, reading, and car shows.</p>
         
         <div class="social-links">
             <a href="https://drive.google.com/file/d/1DUrzMMd1uP6uA8CPw0gAkNPgMZlmDLc8/view?usp=sharing" class="button" target="_blank" rel="noopener noreferrer">Learn More</a>
@@ -280,22 +293,22 @@
                 <div class="company">
                     <img src="images/amazon.png" alt="Amazon Logo">
                     <h3>Amazon (Incoming)</h3>
-                    <p><b>SDE Intern:</b> Contributing to advanced AI and language models at the forefront of artificial intelligence.</p>
+                    <p><b>SDE Intern:</b> Enhancing Alexa AI and language models, optimizing system intelligence for real-time, voice-driven interactions.</p>
                 </div>
                 <div class="company">
                     <img src="images/gt.png" alt="GT Logo">
                     <h3>Georgia Tech</h3>
-                    <p><b>ML Researcher:</b> Building data-driven platforms to empower organizations with actionable insights.</p>
+                    <p><b>ML Researcher:</b> Creating AI-driven learning platforms, integrating research to optimize adaptive education.</p>
                 </div>
                 <div class="company">
                     <img src="images/aptean.png" alt="Aptean Logo">
                     <h3>Aptean</h3>
-                    <p><b>SWE Intern:</b> Developed scalable features ensuring top-tier customer experiences in a fast-paced environment.</p>
+                    <p><b>SWE Intern:</b> Developed scalable, high-impact enterprise solutions to enhance automation and operational efficiency.</p>
                 </div>
                 <div class="company">
                     <img src="images/ambse.png" alt="AMBSE Logo">
                     <h3>AMBSE</h3>
-                    <p><b>Technology Intern:</b> Contributed to high-impact research initiatives, driving technological advances and innovation.</p>
+                    <p><b>SWE Intern:</b> Built scouting and performance analytics tools in fast-paced, high-pressure environments.</p>
                 </div>
             </div>
         </section>
@@ -305,28 +318,28 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project">
-                    <img src="images/order.jpg" alt="Order Matching Engine Preview" />
+                    <img src="images/order3.png" alt="Order Matching Engine Preview" />
                     <h3>Order Matching Engine</h3>
-                    <p>Ultra-Low Latency Trading Platform that matches trades on an order book.</p>
-                    <a href="https://github.com/kashyapnathan/PokerPokerPoker" class="button">Explore</a>
+                    <p>High-performance trading platform designed for ultra-low latency order execution, leveraging advanced data structures and efficient matching algorithms.</p>
+                    <a href="https://github.com/oskarbringle/order-matching-engine" class="button" target="_blank" rel="noopener noreferrer">Explore</a>
                 </div>
                 <div class="project">
                     <img src="images/finsimiq.svg" alt="FinSimIQ Preview" />
                     <h3>FinSimIQ</h3>
-                    <p>A duolingo-esque webapp that improves user knowledge through interactive finance, stock market, and quantitative reasoning quizzes.</p>
-                    <a href="https://github.com/kashyapnathan/crypto-arbitrage" class="button">Explore</a>
+                    <p>Interactive learning platform inspired by Duolingo, teaching stock market concepts and quantitative reasoning through quizzes and real-world simulations.</p>
+                    <a href="https://github.com/FinSimIQ" class="button" target="_blank" rel="noopener noreferrer">Explore</a>
                 </div>
                 <div class="project">
-                    <img src="images/thumbs/perf.png" alt="Holder Preview" />
+                    <img src="images/holder.png" alt="Holder Preview" />
                     <h3>Holder</h3>
                     <p>Blah blah blah.</p>
-                    <a href="https://github.com/oskarbringle/" class="button">Explore</a>
+                    <a href="https://github.com/oskarbringle/" class="button" target="_blank" rel="noopener noreferrer">Explore</a>
                 </div>
                 <div class="project">
-                    <img src="images/thumbs/07.png" alt="Holder Preview" />
-                    <h3>Holder</h3>
-                    <p>Blah blah blah.</p>
-                    <a href="https://github.com/oskarbringle/" class="button">Explore</a>
+                    <img src="images/spotify.png" alt="Spotify Wrapper Preview" />
+                    <h3>Spotify Wrapper</h3>
+                    <p>A personalized music analytics tool that generates a Spotify Wrapped-style summary, offering insights into listening habits, trends, and genre preferences.</p>
+                    <a href="https://sites.google.com/view/aff-group40-2024/spotify-wrapper" class="button" target="_blank" rel="noopener noreferrer">Explore</a>
                 </div>
             </div>
         </section>
@@ -334,7 +347,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Oskar Bringle All rights reserved.</p>
+        <p>© 2025 Oskar Bringle. All rights reserved.</p>
     </footer>
 </body>
 </html>
