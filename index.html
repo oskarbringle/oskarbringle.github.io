@@ -13,7 +13,8 @@
             color: #2d2d2d;
             line-height: 1.6;
         }
-        
+
+        /* Global Links */
         a {
             text-decoration: none;
             color: #001f3f;
@@ -66,18 +67,7 @@
             margin-right: auto;
         }
 
-        /* Main Content */
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        a {
-            text-decoration: none;
-            color: #478082; 
-            transition: color 0.3s ease;
-            font-weight: bold;
-        }
+        /* Buttons */
         .button {
             display: inline-block;
             padding: 0.75em 1.5em;
@@ -88,10 +78,25 @@
             transition: all 0.3s ease;
             margin-top: 1rem;
             box-shadow: 0 2px 8px rgba(0,31,63,0.15);
+            text-decoration: none;
         }
 
         .button:hover {
             background: #004080;
+        }
+
+        /* Main Content Wrapper */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #001f3f;
+            margin: 2rem 0;
         }
 
         /* Experience Grid */
@@ -109,6 +114,11 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
+            /* Ensures consistent box height and vertical alignment */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 220px;
         }
 
         .company:hover {
@@ -117,8 +127,12 @@
         }
 
         .company img {
-            max-width: 80px;
-            margin-bottom: 1rem;
+            /* Force logos to a uniform size/ratio */
+            width: 100px;
+            height: 60px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 1rem;
         }
 
         .company h3 {
@@ -145,6 +159,11 @@
             padding: 1.5rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
+            /* Keep each project card aligned */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 320px; /* Adjust if needed for uniform heights */
         }
 
         .project:hover {
@@ -153,7 +172,10 @@
         }
 
         .project img {
+            /* Maintain consistent ratio for project images */
             width: 100%;
+            max-height: 180px; 
+            object-fit: cover;
             border-radius: 8px;
             margin-bottom: 1rem;
         }
@@ -167,13 +189,7 @@
         .project p {
             font-size: 0.95rem;
             color: #333;
-        }
-
-        h2 {
             text-align: center;
-            font-size: 1.8rem;
-            color: #001f3f;
-            margin: 2rem 0;
         }
 
         /* Footer */
@@ -225,26 +241,32 @@
     </style>
 </head>
 <body>
-    <!-- Header Section (formerly left-pane) -->
+    <!-- Header Section -->
     <div class="header-section">
         <div class="avatar">
-            <img src="images/avatar.png" alt="Avatar" />
+            <img src="images/avatar.jpg" alt="Avatar" />
         </div>
         <h2>About Me:</h2>
         <p>Hey, I'm Oskar! I'm a Junior at Georgia Tech, majoring in Computer Science.</p>
         <p>In my free time, I read, play soccer, lift, and go to car shows.</p>
         
         <div class="social-links">
-            <a href="https://drive.google.com/file/d/1_JQSAvaJMDvEkezEpy0kg3LGBJlNGRZx/view?usp=sharing" class="button">Learn More</a>
+            <a href="https://drive.google.com/file/d/1DUrzMMd1uP6uA8CPw0gAkNPgMZlmDLc8/view?usp=sharing" class="button" target="_blank" rel="noopener noreferrer">Learn More</a>
             <div class="social-icons">
-                <a href="mailto:obringle3@gatech.edu" title="Email">
-                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" fill="#001f3f"/></svg>
+                <a href="mailto:obringle3@gatech.edu" title="Email" target="_blank" rel="noopener noreferrer">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20,4H4C2.895,4,2,4.895,2,6v12c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V6C22,4.895,21.105,4,20,4z M20,8.236l-8,4.882 L4,8.236V6h16V8.236z" fill="#001f3f"/>
+                    </svg>
                 </a>
-                <a href="https://github.com/oskarbringle" title="GitHub">
-                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.092,0.682-0.217,0.682-0.482 c0-0.237-0.008-0.866-0.013-1.7c-2.782,0.605-3.369-1.343-3.369-1.343c-0.454-1.158-1.11-1.466-1.11-1.466 c-0.908-0.62,0.069-0.608,0.069-0.608c1.003,0.07,1.531,1.03,1.531,1.03c0.892,1.529,2.341,1.088,2.91,0.832 c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.029-2.683 C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836 c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646 c0.64,0.699,1.026,1.592,1.026,2.683c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852 c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z" fill="#001f3f"/></svg>
+                <a href="https://github.com/oskarbringle" title="GitHub" target="_blank" rel="noopener noreferrer">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2C6.477,2,2,6.477,2,12c0,4.419,2.865,8.166,6.839,9.489c0.5,0.092,0.682-0.217,0.682-0.482 c0-0.237-0.008-0.866-0.013-1.7c-2.782,0.605-3.369-1.343-3.369-1.343c-0.454-1.158-1.11-1.466-1.11-1.466 c-0.908-0.62,0.069-0.608,0.069-0.608c1.003,0.07,1.531,1.03,1.531,1.03c0.892,1.529,2.341,1.088,2.91,0.832 c0.091-0.647,0.349-1.086,0.635-1.337c-2.22-0.251-4.555-1.111-4.555-4.943c0-1.091,0.39-1.984,1.029-2.683 C6.546,8.54,6.202,7.524,6.746,6.148c0,0,0.84-0.269,2.75,1.025C10.295,6.95,11.15,6.84,12,6.836 c0.85,0.004,1.705,0.114,2.504,0.336c1.909-1.294,2.748-1.025,2.748-1.025c0.546,1.376,0.202,2.394,0.1,2.646 c0.64,0.699,1.026,1.592,1.026,2.683c0,3.841-2.337,4.687-4.565,4.935c0.359,0.307,0.679,0.917,0.679,1.852 c0,1.335-0.012,2.415-0.012,2.741c0,0.269,0.18,0.579,0.688,0.481C19.138,20.161,22,16.416,22,12C22,6.477,17.523,2,12,2z" fill="#001f3f"/>
+                    </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/kash-nathan/" title="LinkedIn">
-                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z" fill="#001f3f"/></svg>
+                <a href="https://www.linkedin.com/in/oskar-bringle/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z" fill="#001f3f"/>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -256,23 +278,23 @@
             <h2>Professional Experience</h2>
             <div class="experience-grid">
                 <div class="company">
-                    <img src="images/openai.png" alt="OpenAI Logo">
+                    <img src="images/amazon.png" alt="Amazon Logo">
                     <h3>Amazon (Incoming)</h3>
                     <p><b>SDE Intern:</b> Contributing to advanced AI and language models at the forefront of artificial intelligence.</p>
                 </div>
                 <div class="company">
-                    <img src="images/palantir.png" alt="Palantir Logo">
+                    <img src="images/gt.png" alt="GT Logo">
                     <h3>Georgia Tech</h3>
-                    <p><b>ML Researcher: </b>Building data-driven platforms to empower organizations with actionable insights.</p>
+                    <p><b>ML Researcher:</b> Building data-driven platforms to empower organizations with actionable insights.</p>
                 </div>
                 <div class="company">
-                    <img src="images/aws.png" alt="Amazon Logo">
+                    <img src="images/aptean.png" alt="Aptean Logo">
                     <h3>Aptean</h3>
                     <p><b>SWE Intern:</b> Developed scalable features ensuring top-tier customer experiences in a fast-paced environment.</p>
                 </div>
                 <div class="company">
-                    <img src="images/darpa.png" alt="DARPA Logo">
-                    <h3>AMB Sports + Entertainment</h3>
+                    <img src="images/ambse.png" alt="AMBSE Logo">
+                    <h3>AMBSE</h3>
                     <p><b>Technology Intern:</b> Contributed to high-impact research initiatives, driving technological advances and innovation.</p>
                 </div>
             </div>
@@ -283,13 +305,13 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project">
-                    <img src="images/thumbs/poker.png" alt="Order Matching Engine Preview" />
+                    <img src="images/order.jpg" alt="Order Matching Engine Preview" />
                     <h3>Order Matching Engine</h3>
                     <p>Ultra-Low Latency Trading Platform that matches trades on an order book.</p>
                     <a href="https://github.com/kashyapnathan/PokerPokerPoker" class="button">Explore</a>
                 </div>
                 <div class="project">
-                    <img src="images/thumbs/btc.png" alt="FinSimIQ Preview" />
+                    <img src="images/finsimiq.svg" alt="FinSimIQ Preview" />
                     <h3>FinSimIQ</h3>
                     <p>A duolingo-esque webapp that improves user knowledge through interactive finance, stock market, and quantitative reasoning quizzes.</p>
                     <a href="https://github.com/kashyapnathan/crypto-arbitrage" class="button">Explore</a>
